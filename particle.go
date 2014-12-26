@@ -15,7 +15,7 @@ func (this *particle) integrate(timeStep float64) {
 	this.acc = scale(this.forceAccum, this.invmass)
 	this.forceAccum.zero()
 	this.vel.add(scale(this.acc, timeStep))
-	// include accel in integration?
+	// include accel in integration for more accuracy?
 	this.pos.add(scale(this.vel, timeStep))
 }
 
